@@ -18,7 +18,8 @@ public class Brand {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String name;
-    private String country;
+    @OneToOne
+    private Country country;
     private Integer foundedIn;
 
     @OneToMany
@@ -28,7 +29,7 @@ public class Brand {
     public Brand() {
     }
 
-    public Brand(String name, String country, Integer foundedIn) {
+    public Brand(String name, Country country, Integer foundedIn) {
         this.name = name;
         this.country = country;
         this.foundedIn = foundedIn;
@@ -58,11 +59,11 @@ public class Brand {
         this.name = name;
     }
 
-    public String getCountry() {
+    public Country getCountry() {
         return country;
     }
 
-    public void setCountry(String country) {
+    public void setCountry(Country country) {
         this.country = country;
     }
 
@@ -93,7 +94,7 @@ public class Brand {
         return "Brand{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", country='" + country + '\'' +
+                ", country='" + country.getName() + '\'' +
                 ", foundedIn=" + foundedIn +
                 ", models=" + models +
                 '}';

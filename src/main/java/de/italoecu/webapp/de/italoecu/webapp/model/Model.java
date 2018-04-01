@@ -21,13 +21,17 @@ public class Model {
     @OneToOne
     private Brand brand;
 
+    @OneToOne
+    private CarType type;
+
     public Model() {
     }
 
-    public Model(String name, String year, Brand brand) {
+    public Model(String name, String year, Brand brand, CarType type) {
         this.name = name;
         this.year = year;
         this.brand = brand;
+        this.type = type;
     }
 
     public Long getId() {
@@ -36,6 +40,14 @@ public class Model {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public CarType getType() {
+        return type;
+    }
+
+    public void setType(CarType type) {
+        this.type = type;
     }
 
     public String getName() {
@@ -82,7 +94,8 @@ public class Model {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", year='" + year + '\'' +
-                ", brand=" + brand +
+                ", brand=" + brand.getName() +
+                ", type=" + type.getType() +
                 '}';
     }
 }

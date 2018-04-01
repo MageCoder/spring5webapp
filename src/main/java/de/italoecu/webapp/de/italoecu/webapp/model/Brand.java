@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.Set;
 
 /**
- * Car Brand
+ * Brand Model
  * @author Andre Schubert <andre.schubert78@gmail.com>
  * @version 1.0
  */

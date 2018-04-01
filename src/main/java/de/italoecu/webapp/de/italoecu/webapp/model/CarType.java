@@ -7,27 +7,25 @@ import javax.persistence.Id;
 import java.util.Objects;
 
 /**
- * Country Model
+ * CarType Model
  * @author Andre Schubert <andre.schubert78@gmail.com>
  * @version 1.0
  */
 @Entity
-public class Country {
+public class CarType {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private String name;
-    private String isoCode;
+    private String type;
 
-    public Country() {
+    public CarType(String type) {
+        this.type = type;
     }
 
-    public Country(String name, String isoCode) {
-        this.id = id;
-        this.name = name;
-        this.isoCode = isoCode;
+    public CarType() {
     }
+
 
     public Long getId() {
         return id;
@@ -37,28 +35,21 @@ public class Country {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getType() {
+        return type;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setType(String type) {
+        this.type = type;
     }
 
-    public String getIsoCode() {
-        return isoCode;
-    }
-
-    public void setIsoCode(String isoCode) {
-        this.isoCode = isoCode;
-    }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Country country = (Country) o;
-        return Objects.equals(id, country.id);
+        CarType carType = (CarType) o;
+        return Objects.equals(id, carType.id);
     }
 
     @Override
@@ -69,10 +60,9 @@ public class Country {
 
     @Override
     public String toString() {
-        return "Country{" +
+        return "CarType{" +
                 "id=" + id +
-                ", name='" + name + '\'' +
-                ", isoCode='" + isoCode + '\'' +
+                ", type='" + type + '\'' +
                 '}';
     }
 }

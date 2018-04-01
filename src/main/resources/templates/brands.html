@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="de" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Auto Marken</title>
+</head>
+<body>
+
+<h1>Auto Marken</h1>
+
+<div th:each="brand : ${brands}">
+    <span th:text="${brand.name}">Test</span>
+</div>
+
+</body>
+</html>
